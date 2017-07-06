@@ -39,7 +39,7 @@ router.post('/webhook', (req, res) => {
         if (event.message) {
           // Handle the message
           let messageParser = new MessageParser(event);
-          messageParse.handle();
+          messageParser.handle();
 
         } else {
           // This event doesn't contain any message...
