@@ -39,9 +39,9 @@ router.post('/webhook', (req, res) => {
           // Handle the message
           const messageParser = new MessageParser(event);
           messageParser.handle().then((response) => {
-            console.log(`Response: ${response}`);
+            console.log(`Response: ${response.data}`);
           }).catch((error) => {
-            console.error(error);
+            console.error(error.data);
           });
 
         } else {
