@@ -15,10 +15,17 @@ router.get('/webhook', (req, res) => {
   const token = process.env.WEBHOOK_TOKEN || '123456';
 
   if (req.query['hub.verify_token'] === token) {
-    res.send(req.query['hub.challenge']);
+    return res.send(req.query['hub.challenge']);
   } else {
     res.send('Invalid token');
   }
 });
 
+
+router.post('/webhook', (req, res) => {
+  const message = req.body.message;
+
+  const text = message.text;
+  
+});
 module.exports = router;
