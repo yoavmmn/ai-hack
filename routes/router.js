@@ -4,8 +4,11 @@ const fetch = require('node-fetch');
 const router = new express.Router();
 
 router.get('/', (req, res) => {
-  const joke = await fetch('https://api.chucknorris.io/jokes/random');
-  res.send(joke.body);
+  (async function () {
+    let stream = await fetch('https://api.chucknorris.io/jokes/random');
+    let joke = await stream.json();
+    res.send(joke.value);
+  }());
 });
 
 router.get('/webhook', (req, res) => {
