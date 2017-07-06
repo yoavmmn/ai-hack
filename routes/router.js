@@ -34,11 +34,15 @@ router.post('/webhook', (req, res) => {
       const timeOfEvent = entry.time;
 
       // Iterate over each messaging event
-      entry.messaging.forEach(async function forEach(event) {
+      entry.messaging.forEach((event) => {
         if (event.message) {
           // Handle the message
           const messageParser = new MessageParser(event);
-          await messageParser.handle();
+          messageParser.handle().then((response) => {
+            console.log(`Response: ${response}`);
+          }).catch((error) => {
+            console.error(error);
+          });
 
         } else {
           // This event doesn't contain any message...
