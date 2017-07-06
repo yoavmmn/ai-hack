@@ -42,8 +42,8 @@ router.post('/webhook', (req, res) => {
             console.log(`Response: ${response.data}`);
           }).catch((error) => {
             console.error(`ERROR: ${error.message}`);
-            console.error(`DATA: ${error.response.data}`);
-            console.error(`REQUEST: ${error.request}`);
+            console.error(`DATA: ${JSON.stringify(error.response.data)}`);
+            console.error(`REQUEST: ${JSON.stringify(error.request)}`);
           });
 
         } else {
