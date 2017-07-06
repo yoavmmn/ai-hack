@@ -37,19 +37,17 @@ router.post('/webhook', (req, res) => {
       // Iterate over each messaging event
       entry.messaging.forEach((event) => {
         if (event.message) {
-          let messageParser = new MessageParser()
-          messageParse.handle()
+          // Handle the message
+          let messageParser = new MessageParser();
+          messageParse.handle();
+
         } else {
+          // This event doesn't contain any message...
           console.log("Webhook received unknown event: ", event);
         }
       });
     });
 
-    // Assume all went well.
-    //
-    // You must send back a 200, within 20 seconds, to let us know
-    // you've successfully received the callback. Otherwise, the request
-    // will time out and we will keep trying to resend.
     res.sendStatus(200);
   }
 });
