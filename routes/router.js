@@ -1,5 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const messagesParser = require('../lib/messages-parser');
 
 const router = new express.Router();
 
@@ -24,8 +25,8 @@ router.get('/webhook', (req, res) => {
 
 router.post('/webhook', (req, res) => {
   const message = req.body.message;
-
   const text = message.text;
-  
+
+  messagesParser.detectMessage(message);
 });
 module.exports = router;
