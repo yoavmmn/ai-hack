@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const messagesParser = require('../lib/messages-parser');
+const { MessageParser } = require('../lib/messages-parser')
 
 const router = new express.Router();
 
@@ -37,6 +37,7 @@ router.post('/webhook', (req, res) => {
       // Iterate over each messaging event
       entry.messaging.forEach((event) => {
         if (event.message) {
+          let messageParser = new MessageParser()
           messagesParser.detectMessage(event);
         } else {
           console.log("Webhook received unknown event: ", event);
