@@ -29,16 +29,16 @@ router.post('/webhook', (req, res) => {
   if (data.object === 'page') {
 
     // Iterate over each entry - there may be multiple if batched
-    data.entry.forEach((entry) => {
+    data.entry.forEach(async function (entry) {
       const pageID = entry.id;
       const timeOfEvent = entry.time;
 
       // Iterate over each messaging event
-      entry.messaging.forEach((event) => {
+      entry.messaging.forEach(async function forEach(event) {
         if (event.message) {
           // Handle the message
           const messageParser = new MessageParser(event);
-          messageParser.handle();
+          await messageParser.handle();
 
         } else {
           // This event doesn't contain any message...
