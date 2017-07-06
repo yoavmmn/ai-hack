@@ -1,11 +1,11 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const { MessageParser } = require('../lib/messages-parser')
+const { MessageParser } = require('../lib/messages-parser');
 
 const router = new express.Router();
 
 router.get('/', (req, res) => {
-  (async function () {
+  (async function callback() {
     const stream = await fetch('https://api.chucknorris.io/jokes/random');
     const joke = await stream.json();
     res.send(joke.value);
