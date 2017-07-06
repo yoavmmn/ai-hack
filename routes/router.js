@@ -38,7 +38,7 @@ router.post('/webhook', (req, res) => {
       entry.messaging.forEach((event) => {
         if (event.message) {
           let messageParser = new MessageParser()
-          messagesParser.detectMessage(event);
+          messageParse.handle()
         } else {
           console.log("Webhook received unknown event: ", event);
         }
