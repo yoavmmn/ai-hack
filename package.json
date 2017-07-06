@@ -1,0 +1,29 @@
+{
+  "name": "ai-hack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoavmmn/ai-hack.git"
+  },
+  "author": "Yoav Maman <yoavmmn@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoavmmn/ai-hack/issues"
+  },
+  "homepage": "https://github.com/yoavmmn/ai-hack#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.7.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "method-override": "^2.3.9"
+  }
+}
