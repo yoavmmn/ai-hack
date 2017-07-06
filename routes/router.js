@@ -38,7 +38,7 @@ router.post('/webhook', (req, res) => {
       entry.messaging.forEach((event) => {
         if (event.message) {
           // Handle the message
-          let messageParser = new MessageParser();
+          let messageParser = new MessageParser(event);
           messageParse.handle();
 
         } else {
