@@ -29,6 +29,8 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "method-override": "^2.3.9",
-    "node-fetch": "next"
+    "mongoose": "^4.11.1",
+    "node-fetch": "next",
+    "npm": "^5.1.0"
   }
 }
