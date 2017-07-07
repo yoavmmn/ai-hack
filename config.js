@@ -2,7 +2,10 @@ const PAGE_ACCESS_TOKEN = 'EAAEc25tPWYEBAFcourIvkvObvZBLqJZAQ2b12IpaAIk2IxZAa1V9
 
 const WELCOME_MESSAGE = 'Welcome, please enter a link.';
 
+const DONT_UNDERSTAND_MESSAGE = 'I\'m so sorry... But I cannot understand you. Please try something else :)';
+
 module.exports = {
   PAGE_ACCESS_TOKEN,
   WELCOME_MESSAGE,
+  DONT_UNDERSTAND_MESSAGE,
 };
