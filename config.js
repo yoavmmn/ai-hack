@@ -4,9 +4,9 @@ const WELCOME_MESSAGE = 'Welcome, please enter a link.';
 
 const DONT_UNDERSTAND_MESSAGE = 'I\'m so sorry... But I cannot understand you. Please try something else :)';
 
-const DB_CONNECTION = 'mongodb://login_user:100200300@ds151452.mlab.com:51452/investores';
+const DB_CONNECTION = process.env.DB_URL;
 
-const SCRAPPER_ENDPOINT = 'https://ai-hack-scraper.herokuapp.com/scrape';
+const SCRAPPER_ENDPOINT = process.env.SCRAPPER_ENDPOINT;
 
 module.exports = {
   PAGE_ACCESS_TOKEN,
