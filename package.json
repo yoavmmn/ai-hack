@@ -32,6 +32,6 @@
     "method-override": "^2.3.10",
     "mongoose": "^5.7.5",
     "node-fetch": "next",
-    "npm": "^5.1.0"
+    "npm": "^6.13.4"
   }
 }
